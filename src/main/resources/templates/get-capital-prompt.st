@@ -1,0 +1,1 @@
+{stateOrCountry}의 수도는 어디지?
