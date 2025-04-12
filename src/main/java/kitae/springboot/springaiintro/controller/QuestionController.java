@@ -2,6 +2,7 @@ package kitae.springboot.springaiintro.controller;
 
 import kitae.springboot.springaiintro.model.Answer;
 import kitae.springboot.springaiintro.model.GetCapitalRequest;
+import kitae.springboot.springaiintro.model.GetCapitalResponse;
 import kitae.springboot.springaiintro.model.Question;
 import kitae.springboot.springaiintro.service.OllamaService;
 import lombok.RequiredArgsConstructor;
@@ -26,8 +27,13 @@ public class QuestionController {
     }
 
     @PostMapping("/capital")
-    public Answer getCapital(@RequestBody GetCapitalRequest getCapitalRequest){
+    public GetCapitalResponse getCapital(@RequestBody GetCapitalRequest getCapitalRequest){
         return ollamaService.getCaptial(getCapitalRequest);
+    }
+
+    @PostMapping("/capitalWidthInfo")
+    public Answer getCapitalWidthInfo(@RequestBody GetCapitalRequest getCapitalRequest){
+        return ollamaService.getCapitalWithInfo(getCapitalRequest);
     }
 
 }
